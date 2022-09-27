@@ -64,7 +64,6 @@ dictionary_file.close()
 To run this program you will need to either:
 
     * Pipe in a sentence as a string to be tokenized, or
-
     * Pipe in multiple sentences as strings separated by newlines to be tokenized
 
 For example:
