@@ -1,0 +1,48 @@
+Multichar_Symbols
+
+%>                   ! Morpheme Border
+%<n%>                ! Name
+%<pl%>               ! Plural
+%<ito%>              ! Diminutive suffix -ito/-ita
+%<illo%>             ! Diminutive suffix -illo/-ita
+%{e%}                ! Archiphone for [e]
+%{o%}                ! Archiphone for [o] v [a]
+%{c%}                ! Archiphone for [c]
+
+LEXICON Root
+
+Nouns ;
+
+LEXICON N
+
+%<n%>: CASE ;
+
+LEXICON CASE
+
+%<nom%>: # ;
+%<pl%>:%>%{e%}s # ;
+%<ito%>:%>%{c%}it%{o%} # ;
+%<illo%>:%>%{c%}ill%{o%} # ;
+
+LEXICON Nouns
+
+vez:vez N ; ! time (as in number of times)
+año:año N ; ! year
+tiempo:tiempo N ; ! time, weather
+día:día N ; ! day
+cosa:cosa N ; ! thing
+hombre:hombre N ; ! man, mankind; husband
+parte:parte N ; ! part, portion
+vida:vida N ; ! life
+momento:momento N ; ! moment, time
+forma:forma N ; ! form, shape, way
+casa:casa N ; ! house
+mundo:mundo N ; ! world
+mujer:mujer N ; ! woman, wife
+caso:caso N ; ! case, occasion
+país:país N ; ! country
+lugar:lugar N ; ! place, position
+persona:persona N ; ! person
+hora:hora N ; ! hour, time
+trabajo:trabajo N ; ! work, job, effort
+punto:punto N ; ! point, dot, period

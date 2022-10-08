@@ -1,0 +1,76 @@
+Alphabet
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Á É Í Ó Ú Ü Ñ
+a b c d e f g h i j k l m n o p q r s t u v w x y z á é í ó ú ü ñ
+
+%>:0
+%{e%}:0
+%{e%}:e
+z:c
+%{o%}:o
+%{o%}:a
+a:0
+o:0
+%{c%}:0
+%{c%}:c
+;
+
+Sets
+
+Con = B C D F G H J K L M N P Q R S T V W X Y Z Ñ
+      b c d f g h j k l m n p q r s t v w x y z ñ
+;
+
+Vow = A E I O U Á É Í Ó Ú Ü
+      a e i o u á é í ó ú ü
+;
+
+Nongen = E I U Á É Í Ó Ú Ü
+         e i u á é í ó ú ü
+;
+
+
+Rules 
+
+"Epenthize [e] between a consonant and a pluralizing [s]"
+%{e%}:e <=> Con: %>: _ ;
+
+"Change [z] to [c] when pluralizing"
+z:c <=> _ %>: %{e%}:e s ;
+
+"Add the suffix -ita if the word ends with an [o]"
+%{o%}:o <=> o: %>: %{c%}: i t _ ;
+
+"Remove [o] at end of the word if adding the suffix -ito"
+o:0 <=> _ %>: %{c%}: i t %{o%}:o ;
+
+"Add the suffix -ita if the word ends with an [a]"
+%{o%}:a <=> a: %>: %{c%}: i t _ ;
+
+"Remove [a] at the end of the word if adding the suffix -ita"
+a:0 <=> _ %>: %{c%}: i t %{o%}:a ;
+
+"Add a [c] if, when adding -ito/-ita, there are two vowels before the end of the word or if there is a non-genedered vowel at the end of the word"
+%{c%}:c <=> Vow: Vow: %>: _ i t %{o%}: ; Nongen: %>: _ i t %{o%}: ;
+
+"Fix stress for the word 'dia' for th diminutive suffix"
+í:i <=> _ Vow: %>: %{c%}: i t %{o%}: ;
+
+"Add the suffix -illa if the word ends with an [o]"
+%{o%}:o <=> o: %>: %{c%}: i l l _ ;
+
+"Remove [o] at end of the word if adding the suffix -illo"
+o:0 <=> _ %>: %{c%}: i l l %{o%}:o ;
+
+"Add the suffix -illa if the word ends with an [a]"
+%{o%}:a <=> a: %>: %{c%}: i l l _ ;
+
+"Remove [a] at the end of the word if adding the suffix -illa"
+a:0 <=> _ %>: %{c%}: i l l %{o%}:a ;
+
+"Add a [c] if, when adding -illo/-illa, there are two vowels before the end of the word or if there is a non-genedered vowel at the end of the word"
+%{c%}:c <=> Vow: Vow: %>: _ i l l %{o%}: ; Nongen: %>: _ i l l %{o%}: ;
+
+"Fix stress for the word 'dia' for th diminutive suffix"
+í:i <=> _ Vow: %>: %{c%}: i l l %{o%}: ;
+
