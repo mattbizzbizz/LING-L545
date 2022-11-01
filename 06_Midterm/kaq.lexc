@@ -1,0 +1,93 @@
+Multichar_Symbols
+
+%>                   ! Morpheme Border
+%<v%>                ! Verb Stem
+%<tv%>               ! Intransitive
+%<perf%>             ! Perfective
+
+%<s_sg1%>            ! Subject 1st Person
+%<s_sg2%>            ! Subject 2nd Person
+%<s_sg3%>            ! Subject 3rd Person
+%<s_pl1%>            ! Subject One Plural
+%<s_pl2%>            ! Subject Two Plural
+%<s_pl3%>            ! Subject Three Plural
+
+%<o_sg1%>            ! Object 1st Person
+%<o_sg2%>            ! Object 2nd Person
+%<o_sg3%>            ! Object 3rd Person
+%<o_pl1%>            ! Object One Plural
+%<o_pl2%>            ! Object Two Plural
+%<o_pl3%>            ! Object Three Plural
+
+%{r%}                ! Archiphone for [r], null, and [t]
+%{'%}                ! Archiphone for null and [']
+%{n%}                ! Archiphone for [n] and null
+
+@U.TAM.Perf@
+
+@U.S_AGR.SG1@
+@U.S_AGR.SG2@
+@U.S_AGR.SG3@
+@U.S_AGR.PL1@
+@U.S_AGR.PL2@
+@U.S_AGR.PL3@
+
+@U.O_AGR.SG1@
+@U.O_AGR.SG2@
+@U.O_AGR.SG3@
+@U.O_AGR.PL1@
+@U.O_AGR.PL2@
+@U.O_AGR.PL3@
+
+LEXICON Root
+
+Aspect ;
+
+LEXICON Aspect
+
+@U.TAM.Perf@:@U.TAM.Perf@x%> AgrO AgrS ;
+
+LEXICON AgrS
+
+@U.S_AGR.SG1@:@U.S_AGR.SG1@nu%> TV ;
+@U.S_AGR.SG2@:@U.S_AGR.SG2@a%> TV ;
+@U.S_AGR.SG3@:@U.S_AGR.SG3@%{r%}u%> TV ;
+@U.S_AGR.PL1@:@U.S_AGR.PL1@qa%> TV ;
+@U.S_AGR.PL2@:@U.S_AGR.PL2@%{'%}i%> TV ;
+@U.S_AGR.PL3@:@U.S_AGR.PL3@ki%> TV ;
+
+LEXICON AgrO
+
+@U.O_AGR.SG1@:@U.O_AGR.SG1@i%{n%}%> TV ;
+@U.O_AGR.SG2@:@U.O_AGR.SG2@at%> TV ;
+@U.O_AGR.SG3@:@U.O_AGR.SG3@%> TV ;
+@U.O_AGR.PL1@:@U.O_AGR.PL1@oj%> TV ;
+@U.O_AGR.PL2@:@U.O_AGR.PL2@ix%> TV ;
+@U.O_AGR.PL3@:@U.O_AGR.PL3@e%> TV ;
+
+LEXICON Person
+
+@U.S_AGR.SG1@%<s_sg1%>:@U.S_AGR.SG1@ # ;
+@U.S_AGR.SG2@%<s_sg2%>:@U.S_AGR.SG2@ # ;
+@U.S_AGR.SG3@%<s_sg3%>:@U.S_AGR.SG3@ # ;
+@U.S_AGR.PL1@%<s_sg1%>:@U.S_AGR.PL1@ # ;
+@U.S_AGR.PL2@%<s_sg2%>:@U.S_AGR.PL2@ # ;
+@U.S_AGR.PL3@%<s_sg3%>:@U.S_AGR.PL3@ # ;
+@U.O_AGR.SG1@%<s_sg1%>:@U.O_AGR.SG1@ # ;
+@U.O_AGR.SG2@%<s_sg2%>:@U.O_AGR.SG2@ # ;
+@U.O_AGR.SG3@%<s_sg3%>:@U.O_AGR.SG3@ # ;
+@U.O_AGR.PL1@%<s_sg1%>:@U.O_AGR.PL1@ # ;
+@U.O_AGR.PL2@%<s_sg2%>:@U.O_AGR.PL2@ # ;
+@U.O_AGR.PL3@%<s_sg3%>:@U.O_AGR.PL3@ # ;
+
+LEXICON Asp
+
+@U.TAM.Perf@%<perf%>:@U.TAM.Perf@ Person ;
+
+LEXICON V-TV
+
+%<v%>%<tv%>: Asp ;
+
+LEXICON TV
+
+tz'ät:tz'ät V-TV ; ! "to see"
