@@ -58,7 +58,11 @@ def train():
     
     # load checkpoint if True
     if load_chk:
-        rnn.load_state_dict(torch.load(save_path))
+	if device == "cpu":
+		rnn.load_state_dict(torch.load(load_path, map_location=torch.device('cpu')))
+	else:
+		rnn.load_state_dict(torch.load(load_path))
+ 
         print("Model loaded successfully !!")
         print("----------------------------------------")
     
