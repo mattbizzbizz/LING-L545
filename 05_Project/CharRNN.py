@@ -29,7 +29,7 @@ def train():
     op_seq_len = 200    # total num of characters in output test sequence
     load_chk = False    # load weights from save_path directory to continue training
     save_path = "./preTrained/CharRNN_tr_word_train.pth"
-    data_path = "./tr_word_train.txt"
+    data_path = "./tr_word_train_filtered.txt"
     #######################################
     
     # load the text file

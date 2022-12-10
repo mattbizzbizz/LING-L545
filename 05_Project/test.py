@@ -13,7 +13,7 @@ def test():
     op_seq_len = 1000   # total num of characters in output test sequence
     
     load_path = "./preTrained/CharRNN_tr_word_train.pth"
-    data_path = "./tr_word_train.txt"
+    data_path = "./tr_word_test_filtered.txt"
     
 #    load_path = "./preTrained/CharRNN_sherlock.pth"
 #    data_path = "./data/sherlock.txt"
